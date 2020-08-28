@@ -2,9 +2,9 @@ package br.com.nektar.app.math;
 
 import java.math.BigDecimal;
 
-import br.com.nektar.app.printer.PrinterVisitor;
+import br.com.nektar.app.printer.PrintVisitor;
 
 public interface Expression {
 	BigDecimal evaluate();
-	void accept(PrinterVisitor printer);
+	void accept(PrintVisitor printer);
 }

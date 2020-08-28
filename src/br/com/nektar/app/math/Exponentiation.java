@@ -2,7 +2,7 @@ package br.com.nektar.app.math;
 
 import java.math.BigDecimal;
 
-import br.com.nektar.app.printer.PrinterVisitor;
+import br.com.nektar.app.printer.PrintVisitor;
 
 public class Exponentiation implements Expression {
 
@@ -28,7 +28,7 @@ public class Exponentiation implements Expression {
 	}
 
 	@Override
-	public void accept(PrinterVisitor printer) {
+	public void accept(PrintVisitor printer) {
 		printer.printExponentiation(this);
 	}
 }

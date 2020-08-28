@@ -7,7 +7,8 @@ import br.com.nektar.app.math.Multiplication;
 import br.com.nektar.app.math.Number;
 import br.com.nektar.app.math.Subtraction;
 import br.com.nektar.app.math.Sum;
-import br.com.nektar.app.printer.PrinterVisitor;
+import br.com.nektar.app.printer.Printer;
+import br.com.nektar.app.printer.PrintVisitor;
 
 public class CalculatorTest {
 	
@@ -22,7 +23,7 @@ public class CalculatorTest {
 		
 		Expression exp = new Multiplication(sum, subs);
 		
-		PrinterVisitor printer = new PrinterVisitor();
+		PrintVisitor printer = new Printer();
 		exp.accept(printer);
 		
 		System.out.println(" = "+exp.evaluate());
