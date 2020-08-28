@@ -1,6 +1,8 @@
-package br.com.nektar.app;
+package br.com.nektar.app.math;
 
 import java.math.BigDecimal;
+
+import br.com.nektar.app.printer.PrinterVisitor;
 
 public class Maximum implements Expression {
 	
@@ -15,5 +17,18 @@ public class Maximum implements Expression {
 	@Override
 	public BigDecimal evaluate() {
 		return left.evaluate().max(right.evaluate());
+	}
+	
+	public Expression getLeft() {
+		return left;
+	}
+	
+	public Expression getRight() {
+		return right;
+	}
+
+	@Override
+	public void accept(PrinterVisitor printer) {
+		printer.printMaximum(this);
 	}
 }

@@ -2,11 +2,12 @@ package br.com.nektar.test;
 
 import java.math.BigDecimal;
 
-import br.com.nektar.app.Expression;
-import br.com.nektar.app.Multiplication;
-import br.com.nektar.app.Number;
-import br.com.nektar.app.Subtraction;
-import br.com.nektar.app.Sum;
+import br.com.nektar.app.math.Expression;
+import br.com.nektar.app.math.Multiplication;
+import br.com.nektar.app.math.Number;
+import br.com.nektar.app.math.Subtraction;
+import br.com.nektar.app.math.Sum;
+import br.com.nektar.app.printer.PrinterVisitor;
 
 public class CalculatorTest {
 	
@@ -21,6 +22,9 @@ public class CalculatorTest {
 		
 		Expression exp = new Multiplication(sum, subs);
 		
-		System.out.println(exp.evaluate());
+		PrinterVisitor printer = new PrinterVisitor();
+		exp.accept(printer);
+		
+		System.out.println(" = "+exp.evaluate());
 	}
 }
