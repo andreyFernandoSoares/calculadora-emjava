@@ -2,17 +2,21 @@ package br.com.nektar.test;
 
 import java.math.BigDecimal;
 
-import br.com.nektar.app.math.Expression;
-import br.com.nektar.app.math.Multiplication;
-import br.com.nektar.app.math.Number;
-import br.com.nektar.app.math.Subtraction;
-import br.com.nektar.app.math.Sum;
-import br.com.nektar.app.printer.Printer;
-import br.com.nektar.app.printer.PrintVisitor;
+import org.junit.Test;
+
+import br.com.nektar.main.exception.NektarMathExecption;
+import br.com.nektar.main.math.Expression;
+import br.com.nektar.main.math.Multiplication;
+import br.com.nektar.main.math.Number;
+import br.com.nektar.main.math.Subtraction;
+import br.com.nektar.main.math.Sum;
+import br.com.nektar.main.print.PrintVisitor;
+import br.com.nektar.main.print.Printer;
 
 public class CalculatorTest {
 	
-	public static void main(String[] args) {
+	@Test
+	public void TestaCalculadora() throws NektarMathExecption {
 		Number numero1 = new Number(new BigDecimal(10));
 		Number numero2 = new Number(new BigDecimal(50));
 		Number numero3 = new Number(new BigDecimal(60));
